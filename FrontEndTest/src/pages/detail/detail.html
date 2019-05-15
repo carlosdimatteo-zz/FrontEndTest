@@ -1,0 +1,73 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: #f3f3f5 ">
+    <ion-card style="background:#2abab6;border-radius:10px">
+        <ion-item style="background:#2abab6;color:white">
+            <ion-thumbnail item-start>
+                <img style="border-radius:50px" src="{{user.picture.thumbnail}}">
+              </ion-thumbnail>
+              <h2 style="color:white">{{firstName}} {{lastName}}</h2>
+              <h3 style="color:white">{{user.email}}</h3>
+        </ion-item>
+        <ion-item style="background:#2bafac;color:white ">
+          <ion-row>
+              <ion-col >
+                <ion-row justify-content-center  >
+                  {{randomNumber}}
+                </ion-row>
+                <ion-row justify-content-center>
+                  CONTACTS
+                </ion-row>
+              </ion-col>
+            <ion-col >
+              <ion-row justify-content-center>
+                  {{user.dob.age}}
+              </ion-row>
+              <ion-row justify-content-center>
+                AGE
+              </ion-row>
+            </ion-col>
+            <ion-col >
+              <ion-row justify-content-center>{{user.nat}}</ion-row>
+              <ion-row justify-content-center>NAT</ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-card>
+
+
+
+      <ion-card style="background:#2abab6;border-radius:10px">
+        <ion-list>
+          
+          <ion-item (click)="favorite()">
+              <ion-icon name="star" item-start large></ion-icon>
+              <h2>Add to favorites</h2>
+            </ion-item>
+            <ion-item >
+              <ion-icon name="call" item-start large ></ion-icon>
+                  <h2>{{user.phone}}</h2>
+              <ion-badge (click)="call()" item-end>CALL</ion-badge>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="pin" item-start large ></ion-icon>
+              <h2>{{user.location.street}}</h2>
+            </ion-item>
+            
+        </ion-list>
+            
+        </ion-card>
+</ion-content>
