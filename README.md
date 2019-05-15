@@ -3,7 +3,7 @@ Front end test for user listing
 
 #Online
 
-You can use [THIS LINK!!](https://carlosdimatteo.github.io/FrontEndTest/) to check the app out online 
+You can use [THIS LINK!!](https://carlosdimatteo.github.io/FrontEndTest/) to check the app out online (best seen from a mobile device view)
 
 # Running the app
 
