@@ -1,0 +1,79 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+ -->
+
+<ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="userType">
+      <ion-segment-button value="pros">
+        Pros
+      </ion-segment-button>
+      <ion-segment-button value="customers">
+        Customers
+      </ion-segment-button>
+      <ion-segment-button value="invites">
+        Invites
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="userType">
+    <ion-list *ngSwitchCase="'pros'">
+        <ion-item-group *ngFor="let group of userList">
+
+            <ion-item-divider light>{{group.letter}}</ion-item-divider>
+            <ion-item  (click)="goToDetail(user.first,user.last)" *ngFor="let user of group.users">
+                <ion-thumbnail item-start>
+                  <img style="border-radius:50px" src="https://source.unsplash.com/200x200/?face,{{user.first}}">
+                </ion-thumbnail>
+                <h2>{{user.first}} {{user.last}}</h2>
+                <h3>{{user.email}}</h3>
+              </ion-item>
+      
+          </ion-item-group>
+      
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'customers'">
+        <ion-item-group *ngFor="let group of customersList">
+
+            <ion-item-divider light>{{group.letter}}</ion-item-divider>
+            <ion-item  (click)="goToDetail(user.first,user.last)" *ngFor="let user of group.users">
+                <ion-thumbnail item-start>
+                  <img style="border-radius:50px" src="https://source.unsplash.com/200x200/?face,{{user.first}}">
+                </ion-thumbnail>
+                <h2>{{user.first}} {{user.last}}</h2>
+                <h3>{{user.email}}</h3>
+              </ion-item>
+      
+          </ion-item-group>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'invites'">
+        <ion-item-group *ngFor="let group of invitesList">
+
+            <ion-item-divider light>{{group.letter}}</ion-item-divider>
+            <ion-item  (click)="goToDetail(user.first,user.last)" *ngFor="let user of group.users">
+                <ion-thumbnail item-start>
+                  <img style="border-radius:50px" src="https://source.unsplash.com/200x200/?face,{{user.first}}">
+                </ion-thumbnail>
+                <h2>{{user.first}} {{user.last}}</h2>
+                <h3>{{user.email}}</h3>
+              </ion-item>
+      
+          </ion-item-group>
+    </ion-list>
+  </div>
+</ion-content>
