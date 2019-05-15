@@ -24,8 +24,7 @@ export class HomePage {
 
     this.userType='pros'
     const loader = this.loadingCtrl.create({
-      content:'Please Wait...',
-      duration:3000
+      content:'Please Wait...'
     })
     loader.present()
     this.userInfo.getUsers().subscribe((res:any)=>{
